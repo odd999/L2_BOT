@@ -24,7 +24,7 @@ def run():
                 await bot.load_extension(f"cmds.{cmd_file.name[:-3]}")
                  
 
-#hi hi is that you??
+
 
 
     bot.run(settings.DISCORD_API_SECRET, root_logger=True) 
