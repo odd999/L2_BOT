@@ -22,6 +22,37 @@ def run():
         for cmd_file in settings.CMDS_DIR.glob("*.py"):
             if cmd_file.name != "__init__.py":
                 await bot.load_extension(f"cmds.{cmd_file.name[:-3]}")
+
+    @bot.group()
+# This is a function or group commands called (math) that will group all math oprations
+    async def math(ctx):
+        if ctx.invoked_subcommand is None:
+         await ctx.send(f"No, {ctx.subcommand_passed} does not belong to math")
+
+
+
+# A command function for adding two nembers 
+    @math.command()
+    async def add(ctx, one : int , two : int ):
+        await ctx.send(one+two)
+
+
+# A command function called add 
+    @math.command()
+    async def sub(ctx, one : int , two : int ):
+            await ctx.send(one-two)
+
+
+# A command function called add 
+    @math.command()
+    async def multi(ctx, one : int , two : int ):
+            await ctx.send(one*two)
+
+
+    # A command function called add 
+    @math.command()
+    async def divi(ctx, one : int , two : int ):
+            await ctx.send(one/two)
                  
 
 
